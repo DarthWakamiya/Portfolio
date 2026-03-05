@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wakamiya Naufal | Cybersecurity Analyst</title>
+    <meta name="description" content="SOC-focused cybersecurity portfolio showcasing defensive security skills, threat monitoring, and incident response capabilities.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        purple: {
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+        }
+        
+        .glow-purple:hover {
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.25);
+        }
+        
+        .skill-card {
+            transition: all 0.3s ease;
+            border: 1px solid #262626;
+        }
+        
+        .skill-card:hover {
+            border-color: #a855f7;
+            transform: translateY(-4px);
+        }
+        
+        .terminal-cursor {
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .image-frame {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid #404040;
+            pointer-events: none;
+            z-index: 10;
+        }
+        
+        .image-frame::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a855f7, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-frame:hover::after {
+            opacity: 1;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #a855f7;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #404040, transparent);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#hero" class="text-xl font-semibold tracking-tight">
+                    <span class="text-white">Wakamiya</span><span class="text-purple-500">.Naufal</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors">About</a>
+                    <a href="#expertise" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors">Expertise</a>
+                    <a href="#lab" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors">Lab Experience</a>
+                    <a href="#terminal" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors">Terminal</a>
+                    <a href="#contact" class="nav-link text-sm text-neutral-300 hover:text-white transition-colors">Contact</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#about" class="block text-sm text-neutral-300 hover:text-white">About</a>
+                <a href="#expertise" class="block text-sm text-neutral-300 hover:text-white">Expertise</a>
+                <a href="#lab" class="block text-sm text-neutral-300 hover:text-white">Lab Experience</a>
+                <a href="#terminal" class="block text-sm text-neutral-300 hover:text-white">Terminal</a>
+                <a href="#contact" class="block text-sm text-neutral-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-20 pb-16 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="fade-in" style="animation-delay: 0.1s;">
+                <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Cybersecurity Portfolio</p>
+            </div>
+            <h1 class="fade-in text-5xl md:text-7xl font-bold mb-6 tracking-tight" style="animation-delay: 0.2s;">
+                Wakamiya <span class="gradient-text">Naufal</span>
+            </h1>
+            <p class="fade-in text-xl md:text-2xl text-neutral-400 mb-8 max-w-3xl mx-auto leading-relaxed" style="animation-delay: 0.3s;">
+                Cybersecurity Analyst specializing in <span class="text-white font-medium">Security Operations Center</span> (SOC) operations, threat monitoring, and defensive security strategies.
+            </p>
+            <p class="fade-in text-neutral-500 mb-10 max-w-2xl mx-auto leading-relaxed" style="animation-delay: 0.4s;">
+                Building expertise in real-time threat detection, incident response, and security analytics. 
+                Committed to protecting organizational assets through proactive defense and continuous monitoring.
+            </p>
+            <div class="fade-in flex flex-col sm:flex-row gap-4 justify-center" style="animation-delay: 0.5s;">
+                <a href="#contact" class="btn-primary px-8 py-4 rounded-lg font-medium text-white inline-flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Get in Touch
+                </a>
+                <a href="#expertise" class="px-8 py-4 rounded-lg font-medium text-white border border-neutral-700 hover:border-purple-500 hover:bg-purple-500/10 transition-all inline-flex items-center justify-center gap-2">
+                    <i data-lucide="shield" class="w-5 h-5"></i>
+                    View Expertise
+                </a>
+            </div>
+            <div class="fade-in mt-16 flex justify-center gap-6" style="animation-delay: 0.6s;">
+                <div class="flex items-center gap-2 text-neutral-500 text-sm">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i>
+                    SOC Analysis
+                </div>
+                <div class="flex items-center gap-2 text-neutral-500 text-sm">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i>
+                    Threat Detection
+                </div>
+                <div class="flex items-center gap-2 text-neutral-500 text-sm">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-purple-500"></i>
+                    Incident Response
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Professional Summary / About -->
+    <section id="about" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="slide-up">
+                    <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Professional Summary</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Defensive Security <span class="gradient-text">First</span></h2>
+                    <div class="space-y-4 text-neutral-400 leading-relaxed">
+                        <p>
+                            I am a cybersecurity student with a dedicated focus on <strong class="text-white">Security Operations Center (SOC)</strong> operations and defensive security methodologies. My primary objective is to develop expertise in real-time threat detection, security monitoring, and incident response.
+                        </p>
+                        <p>
+                            Through structured lab environments and CTF-style exercises, I have built practical experience in analyzing security events, identifying anomalous behavior, and understanding attack patterns from a defender's perspective.
+                        </p>
+                        <p>
+                            My background includes foundational knowledge in penetration testing, which provides valuable insight into attacker methodologies and strengthens my defensive capabilities. This dual perspective enables me to anticipate threats and implement more effective security controls.
+                        </p>
+                        <p>
+                            I bring strong analytical thinking, meticulous documentation practices, and a commitment to continuous learning—essential qualities for success in SOC environments.
+                        </p>
+                    </div>
+                </div>
+                <div class="slide-up space-y-6" style="animation-delay: 0.2s;">
+                    <div class="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 glow-purple">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-purple-500/10 rounded-lg">
+                                <i data-lucide="target" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-white mb-2">Primary Focus</h3>
+                                <p class="text-sm text-neutral-400">SOC operations, threat detection, and incident response fundamentals with emphasis on proactive defense strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 glow-purple">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-purple-500/10 rounded-lg">
+                                <i data-lucide="microscope" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-white mb-2">Analytical Approach</h3>
+                                <p class="text-sm text-neutral-400">Structured problem-solving with strong documentation skills and attention to detail in security analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-900/50 border border-neutral-800 rounded-xl p-6 glow-purple">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-purple-500/10 rounded-lg">
+                                <i data-lucide="layers" class="w-6 h-6 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-white mb-2">Supporting Foundation</h3>
+                                <p class="text-sm text-neutral-400">Penetration testing knowledge provides attacker perspective, enhancing defensive capabilities and threat understanding.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Core Expertise -->
+    <section id="expertise" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 slide-up">
+                <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Technical Skills</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Core <span class="gradient-text">Expertise</span></h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Specialized capabilities in defensive security with supporting technical foundations.</p>
+            </div>
+
+            <!-- Main Focus -->
+            <div class="mb-12 slide-up" style="animation-delay: 0.1s;">
+                <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                    Primary Specializations
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="skill-card bg-neutral-900 rounded-xl p-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg w-fit mb-4">
+                            <i data-lucide="activity" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Security Monitoring</h4>
+                        <p class="text-sm text-neutral-400">Real-time monitoring of security events and alert triage in SIEM environments.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900 rounded-xl p-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg w-fit mb-4">
+                            <i data-lucide="file-text" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Log Analysis</h4>
+                        <p class="text-sm text-neutral-400">Parsing and analyzing system logs to identify security incidents and anomalies.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900 rounded-xl p-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg w-fit mb-4">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Incident Response</h4>
+                        <p class="text-sm text-neutral-400">Fundamental IR procedures including containment, eradication, and recovery.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900 rounded-xl p-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg w-fit mb-4">
+                            <i data-lucide="network" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Network Traffic Analysis</h4>
+                        <p class="text-sm text-neutral-400">Packet inspection and flow analysis to detect malicious network activity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supporting Skills -->
+            <div class="slide-up" style="animation-delay: 0.2s;">
+                <h3 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-neutral-500 rounded-full"></span>
+                    Supporting Skills
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="skill-card bg-neutral-900/50 rounded-xl p-6 border-neutral-800">
+                        <div class="p-3 bg-neutral-800 rounded-lg w-fit mb-4">
+                            <i data-lucide="crosshair" class="w-6 h-6 text-neutral-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Penetration Testing</h4>
+                        <p class="text-sm text-neutral-400">Foundational knowledge of attack vectors and exploitation techniques.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900/50 rounded-xl p-6 border-neutral-800">
+                        <div class="p-3 bg-neutral-800 rounded-lg w-fit mb-4">
+                            <i data-lucide="terminal" class="w-6 h-6 text-neutral-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Linux Administration</h4>
+                        <p class="text-sm text-neutral-400">System management, shell scripting, and security hardening.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900/50 rounded-xl p-6 border-neutral-800">
+                        <div class="p-3 bg-neutral-800 rounded-lg w-fit mb-4">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-neutral-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Network Security</h4>
+                        <p class="text-sm text-neutral-400">Firewall configuration, IDS/IPS concepts, and secure architecture.</p>
+                    </div>
+                    <div class="skill-card bg-neutral-900/50 rounded-xl p-6 border-neutral-800">
+                        <div class="p-3 bg-neutral-800 rounded-lg w-fit mb-4">
+                            <i data-lucide="lock" class="w-6 h-6 text-neutral-400"></i>
+                        </div>
+                        <h4 class="font-semibold text-white mb-2">Cryptography</h4>
+                        <p class="text-sm text-neutral-400">Understanding of encryption, hashing, and secure protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Practical Lab Experience -->
+    <section id="lab" class="py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 slide-up">
+                <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Hands-On Experience</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Practical <span class="gradient-text">Lab Experience</span></h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Applied learning through structured environments and security challenges.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-16 slide-up" style="animation-delay: 0.1s;">
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg">
+                            <i data-lucide="trophy" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">CTF Challenges</h3>
+                    </div>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Exploitation and vulnerability analysis exercises</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Forensic investigation and malware analysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Reverse engineering fundamentals</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg">
+                            <i data-lucide="search" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Log Analysis Practice</h3>
+                    </div>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>SIEM query development and alert tuning</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Windows Event Log and Syslog analysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Correlation rule development</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg">
+                            <i data-lucide="git-branch" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Network Segmentation Labs</h3>
+                    </div>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>VLAN configuration and access control</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Firewall rule implementation and testing</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Zero-trust architecture concepts</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-3 bg-purple-500/10 rounded-lg">
+                            <i data-lucide="bug" class="w-6 h-6 text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Vulnerability Assessment</h3>
+                    </div>
+                    <ul class="space-y-3 text-neutral-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Automated scanning with Nessus and Nmap</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Manual verification and risk prioritization</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0"></i>
+                            <span>Remediation recommendation development</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Visual Skill Templates -->
+            <div class="slide-up" style="animation-delay: 0.2s;">
+                <h3 class="text-lg font-semibold text-white mb-6">Skill Demonstrations</h3>
+                <p class="text-neutral-400 mb-8"></p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Log Analysis -->
+                    <div class="image-frame rounded-xl bg-neutral-900">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
+                            <img src="enum.png" alt="Reconnaissance & Service Discovery Simulation" class="w-full h-full object-cover opacity-80">
+                        </div>
+                        <div class="p-4 border-t border-neutral-800">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm font-medium text-white">Reconnaissance & Service Discovery (CTF)</span>
+                            </div>
+                            <p class="text-xs text-neutral-500">Conducted network reconnaissance to identify exposed services and potential misconfigurations.
+Discovered open FTP service with anonymous access and analyzed web server configuration to assess attack surface exposure.</p>
+                        </div>
+                    </div>
+                    <!-- Linux Terminal -->
+                    <div class="image-frame rounded-xl bg-neutral-900">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
+                            <img src="firewall.png" alt="Linux Terminal" class="w-full h-full object-cover opacity-80">
+                        </div>
+                        <div class="p-4 border-t border-neutral-800">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="terminal" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm font-medium text-white">Linux Host Firewall Hardening & Traffic Control</span>
+                            </div>
+                            <p class="text-xs text-neutral-500">Implemented host-based firewall configurations using both iptables and UFW to understand rule hierarchy, policy enforcement, and traffic filtering behavior.
+Simulated IP blocking and controlled access scenarios to evaluate defensive network posture.</p>
+                        </div>
+                    </div>
+                    <!-- Network Monitoring -->
+                    <div class="image-frame rounded-xl bg-neutral-900">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
+                            <img src="wireshark.png" alt="Network Monitoring" class="w-full h-full object-cover opacity-80">
+                        </div>
+                        <div class="p-4 border-t border-neutral-800">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="activity" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm font-medium text-white">Network Traffic Monitoring</span>
+                            </div>
+                            <p class="text-xs text-neutral-500">Real-time flow analysis and anomaly detection</p>
+                        </div>
+                    </div>
+                    <!-- Security Scan -->
+                    <div class="image-frame rounded-xl bg-neutral-900">
+                        <div class="aspect-video bg-gradient-to-br from-neutral-900 to-neutral-800 flex items-center justify-center">
+                            <img src="burp.png" alt="Security Scan Results" class="w-full h-full object-cover opacity-80">
+                        </div>
+                        <div class="p-4 border-t border-neutral-800">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="scan" class="w-4 h-4 text-purple-400"></i>
+                                <span class="text-sm font-medium text-white">HTTP Header Manipulation & Server-Side Validation Testing (CTF)</span>
+                            </div>
+                            <p class="text-xs text-neutral-500">Observed differential server responses based on modified User-Agent values, indicating potential trust-based access control weakness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Interactive Terminal -->
+    <section id="terminal" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 slide-up">
+                <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Interactive</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Command <span class="gradient-text">Interface</span></h2>
+                <p class="text-neutral-400">Type <code class="bg-neutral-800 px-2 py-1 rounded text-purple-400">help</code> to see available commands.</p>
+            </div>
+
+            <div class="slide-up bg-neutral-900 rounded-xl overflow-hidden border border-neutral-800 glow-purple" style="animation-delay: 0.1s;">
+                <!-- Terminal Header -->
+                <div class="bg-neutral-800 px-4 py-3 flex items-center gap-2">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <span class="text-xs text-neutral-400 font-mono">wakamiya@portfolio:~</span>
+                    </div>
+                    <div class="w-16"></div>
+                </div>
+                
+                <!-- Terminal Body -->
+                <div class="p-6 font-mono text-sm min-h-[400px] max-h-[500px] overflow-y-auto" id="terminalBody">
+                    <div class="mb-4">
+                        <span class="text-green-400">➜</span>
+                        <span class="text-purple-400"> ~</span>
+                        <span class="text-white"> welcome</span>
+                    </div>
+                    <div class="text-neutral-400 mb-4">
+                        Welcome to Wakamiya Naufal's interactive portfolio terminal.<br>
+                        Type 'help' to see available commands.
+                    </div>
+                    <div id="terminalOutput"></div>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="text-green-400">➜</span>
+                        <span class="text-purple-400"> ~</span>
+                        <input 
+                            type="text" 
+                            id="terminalInput" 
+                            class="bg-transparent border-none outline-none text-white flex-1 font-mono"
+                            placeholder="Type a command..."
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+                        <span class="terminal-cursor w-2 h-5 bg-purple-500"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center slide-up">
+            <p class="text-purple-400 font-mono text-sm mb-4 tracking-wider uppercase">Get in Touch</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Connect</span></h2>
+            <p class="text-neutral-400 mb-12 max-w-2xl mx-auto">
+                I am currently seeking internship opportunities in Security Operations Centers. 
+                If you are looking for a dedicated analyst with strong defensive security skills, I would welcome the opportunity to discuss how I can contribute to your team.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <a href="mailto:wkm.naufal@gmail.com" class="group bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-purple-500 transition-all">
+                    <div class="p-4 bg-purple-500/10 rounded-full w-fit mx-auto mb-4 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">Email</h3>
+                    <p class="text-sm text-neutral-400">wkm.naufal@gmail.com</p>
+                </a>
+                <a href="https://github.com/AllMightyLethal" target="_blank" rel="noopener noreferrer" class="group bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-purple-500 transition-all">
+                    <div class="p-4 bg-purple-500/10 rounded-full w-fit mx-auto mb-4 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="github" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">GitHub</h3>
+                    <p class="text-sm text-neutral-400">github.com/AllMightyLethal</p>
+                </a>
+                <a href="https://www.linkedin.com/in/wakamiya-naufal-03a39639b" target="_blank" rel="noopener noreferrer" class="group bg-neutral-900 border border-neutral-800 rounded-xl p-6 hover:border-purple-500 transition-all">
+                    <div class="p-4 bg-purple-500/10 rounded-full w-fit mx-auto mb-4 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <h3 class="font-semibold text-white mb-2">LinkedIn</h3>
+                    <p class="text-sm text-neutral-400">linkedin.com/in/wakamiyanaufal</p>
+                </a>
+            </div>
+
+            <div class="bg-neutral-900/50 border border-neutral-800 rounded-xl p-8">
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <i data-lucide="download" class="w-5 h-5 text-purple-400"></i>
+                    <span class="text-neutral-400">Download my resume for detailed information:</span>
+                    <button class="btn-primary px-6 py-3 rounded-lg font-medium text-white text-sm inline-flex items-center gap-2">
+                        <i data-lucide="file-down" class="w-4 h-4"></i>
+                        Download Resume
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-neutral-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-neutral-500">
+                © 2026 Wakamiya Naufal. All rights reserved.
+            </p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="text-neutral-500 hover:text-purple-400 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="text-neutral-500 hover:text-purple-400 transition-colors">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="text-neutral-500 hover:text-purple-400 transition-colors">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.slide-up, .fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Terminal functionality
+        const terminalInput = document.getElementById('terminalInput');
+        const terminalOutput = document.getElementById('terminalOutput');
+        const terminalBody = document.getElementById('terminalBody');
+
+        const commands = {
+            help: {
+                description: 'Show available commands',
+                execute: () => `
+<span class="text-purple-400 font-semibold">Available Commands:</span>
+
+  <span class="text-green-400">help</span>     - Show this help message
+  <span class="text-green-400">profile</span>  - Display professional profile
+  <span class="text-green-400">skills</span>   - List technical skills
+  <span class="text-green-400">labs</span>     - Show lab experience
+  <span class="text-green-400">clear</span>    - Clear terminal screen
+  <span class="text-green-400">contact</span>  - Display contact information
+
+<span class="text-neutral-500">Type any command to explore my portfolio.</span>`
+            },
+            profile: {
+                description: 'Display professional profile',
+                execute: () => `
+<span class="text-purple-400 font-semibold">Professional Profile</span>
+
+<span class="text-white">Name:</span>     Wakamiya Naufal
+<span class="text-white">Title:</span>    Cybersecurity Analyst | SOC Focus
+<span class="text-white">Status:</span>   Cybersecurity Student
+
+<span class="text-neutral-400">A dedicated cybersecurity student specializing in Security Operations
+Center (SOC) operations, threat detection, and incident response.
+Committed to developing expertise in defensive security through
+continuous learning and hands-on practice.</span>`
+            },
+            skills: {
+                description: 'List technical skills',
+                execute: () => `
+<span class="text-purple-400 font-semibold">Technical Skills</span>
+
+<span class="text-white">Primary Specializations:</span>
+  • Security Monitoring & SIEM
+  • Log Analysis & Correlation
+  • Incident Response Fundamentals
+  • Network Traffic Analysis
+  • Threat Detection Concepts
+
+<span class="text-white">Supporting Skills:</span>
+  • Penetration Testing Fundamentals
+  • Linux System Administration
+  • Network Security Basics
+  • Cryptography Concepts
+  • Python & Bash Scripting`
+            },
+            labs: {
+                description: 'Show lab experience',
+                execute: () => `
+<span class="text-purple-400 font-semibold">Practical Lab Experience</span>
+
+<span class="text-white">CTF Challenges:</span>
+  • Exploitation and vulnerability analysis
+  • Forensic investigation exercises
+  • Reverse engineering practice
+
+<span class="text-white">Log Analysis:</span>
+  • SIEM query development
+  • Windows Event Log analysis
+  • Alert correlation and tuning
+
+<span class="text-white">Network Labs:</span>
+  • VLAN configuration and segmentation
+  • Firewall rule implementation
+  • IDS/IPS deployment
+
+<span class="text-white">Vulnerability Assessment:</span>
+  • Automated scanning (Nessus, Nmap, Gobuster, etc)
+  • Manual verification techniques
+  • Risk prioritization`
+            },
+            clear: {
+                description: 'Clear terminal screen',
+                execute: () => {
+                    terminalOutput.innerHTML = '';
+                    return null;
+                }
+            },
+            contact: {
+                description: 'Display contact information',
+                execute: () => `
+<span class="text-purple-400 font-semibold">Contact Information</span>
+
+<span class="text-white">Email:</span>    wkm.naufal@gmail.com
+<span class="text-white">GitHub:</span>   github.com/wakamiyanaufal
+<span class="text-white">LinkedIn:</span> linkedin.com/in/wakamiyanaufal
+
+<span class="text-neutral-400">Open to internship opportunities in SOC and defensive security roles.</span>`
+            }
+        };
+
+        function addToTerminal(content, isCommand = false) {
+            const div = document.createElement('div');
+            div.className = 'mb-4';
+            
+            if (isCommand) {
+                div.innerHTML = `<span class="text-green-400">➜</span><span class="text-purple-400"> ~</span> <span class="text-white">${content}</span>`;
+            } else {
+                div.innerHTML = content;
+            }
+            
+            terminalOutput.appendChild(div);
+            terminalBody.scrollTop = terminalBody.scrollHeight;
+        }
+
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const input = terminalInput.value.trim().toLowerCase();
+                terminalInput.value = '';
+                
+                if (input) {
+                    addToTerminal(input, true);
+                    
+                    if (commands[input]) {
+                        const result = commands[input].execute();
+                        if (result !== null) {
+                            addToTerminal(result);
+                        }
+                    } else {
+                        addToTerminal(`<span class="text-red-400">Command not found: ${input}</span>\n<span class="text-neutral-500">Type 'help' to see available commands.</span>`);
+                    }
+                }
+            }
+        });
+
+        // Focus terminal input when clicking terminal body
+        terminalBody.addEventListener('click', () => {
+            terminalInput.focus();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-black/95');
+            } else {
+                nav.classList.remove('bg-black/95');
+            }
+        });
+    </script>
+</body>
+</html>
