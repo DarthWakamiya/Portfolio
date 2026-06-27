@@ -1212,51 +1212,33 @@ strong { color: var(--text); font-weight: 600; }
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm <strong>Wakamiya Naufal</strong>, a cybersecurity enthusiast focused on understanding
-            both the offensive and defensive sides of security. My interest isn't in the aesthetics
-            of hacking,it's in the logic, the systems, and the problem-solving.
+           I'm <strong>Wakamiya Naufal</strong>, a cybersecurity enthusiast driven by curiosity, continuous learning, and a passion for understanding how systems work from both the offensive and defensive perspectives. What interests me most isn't the image of hacking. it's the logic behind attacks, the architecture of secure systems, and the challenge of solving complex security problems.
           </p>
           <p>
-            I started by learning Linux and programming, then gradually moved into penetration testing,
-            reverse engineering, and network security. Platforms like Hack The Box and TryHackMe have
-            been core to my hands-on learning, alongside reading documentation, CVEs, and real-world
-            incident reports.
+            My journey began with Linux, networking, and programming before expanding into penetration testing, web application security, reverse engineering, Active Directory, and network security. Through hands-on practice with platforms like HackTheBox and TryHackMe, along with studying technical documentation, CVEs, and real-world security research, I've built a practical foundation in cybersecurity.
           </p>
           <p>
-            Outside of technical work, I have a genuine interest in the Japanese language,studying it
-            seriously alongside my security work. I believe discipline in language learning and discipline
-            in security research come from the same mindset: patience, consistency, and attention to detail.
+            Although I explore multiple areas of cybersecurity to develop a broad understanding of modern security, my primary focus is <strong>Offensive Security and Red Teaming</strong>. I continuously deepen my knowledge of penetration testing, exploit development, Active Directory security, and adversary simulation while maintaining foundational knowledge across defensive security, cloud security, networking, and reverse engineering.
           </p>
           <p>
-            I'm building toward a career in security where I can contribute meaningfully,whether that's
-            in red teaming, threat detection, or security engineering.
+            My long-term goal is to build a career in Offensive Security, continuously improving my technical skills through practical projects, CTFs, labs, and real-world security research while contributing to stronger and more resilient systems.
           </p>
         </div>
 
         <div class="about-facts">
           <div class="fact-item">
             <span class="fact-label">Focus</span>
-            <span class="fact-value">Offensive & Defensive Security</span>
+            <span class="fact-value">Offensive Security</span>
           </div>
           <div class="fact-item">
             <span class="fact-label">Platforms</span>
             <span class="fact-value">HTB · TryHackMe · CTFs</span>
           </div>
-          <div class="fact-item">
-            <span class="fact-label">Language</span>
-            <span class="fact-value">Japanese (in progress)</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-label">Currently</span>
-            <!-- Replace CURRENT_STATUS with what you're working on -->
-            <span class="fact-value accent">CURRENT_STATUS</span>
-          </div>
-          <div class="fact-item">
+          <!-- <div class="fact-item">
             <span class="fact-label">CV</span>
-            <!-- Replace CV_DOWNLOAD_URL with your actual CV link -->
             <span class="fact-value">
-              <a href="CV_DOWNLOAD_URL" class="inline-link" download>Download CV</a>
-            </span>
+            <a href="CV_DOWNLOAD_URL" class="inline-link" download>Download CV</a>
+            </span> --> needed soon...
           </div>
         </div>
       </div>
@@ -1493,8 +1475,8 @@ strong { color: var(--text); font-weight: 600; }
           <div class="timeline-marker"></div>
           <div class="timeline-content">
             <span class="timeline-year">2026</span>
-            <h3>Cloud Security</h3>
-            <p>Expanded into cloud security. Learning AWS attack paths, IAM misconfigurations, and cloud-native defensive strategies.</p>
+            <h3>Offensive Security</h3>
+            <p>I enjoy learning different areas of cybersecurity to build a well-rounded foundation. However, my primary focus is Offensive Security and Red Teaming, where I dedicate most of my time to penetration testing, exploit development, Active Directory, and real-world attack methodologies.</p>
           </div>
         </div>
 
@@ -1530,7 +1512,7 @@ strong { color: var(--text); font-weight: 600; }
         <article class="card reveal">
           <div class="card-image">
             <!-- Replace PROJECT_IMAGE_1 with actual image path -->
-            <img src="PROJECT_IMAGE_1" alt="NightWatch EDR" /> 
+            <img src="images/EDR.webp" alt="NightWatch EDR" /> 
             <div class="image-placeholder">
               <span class="card-category-badge">Blue Team</span>
             </div>
@@ -1541,9 +1523,9 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-hard">Advanced</span>
             </div>
             <h3 class="card-title">NightWatch EDR</h3>
-            <p class="card-desc">A proof-of-concept Endpoint Detection & Response tool. Monitors system events, detects suspicious behavior, and logs threat indicators in real time.</p>
+            <p class="card-desc">A Proof-of-Concept Endpoint Detection & Response (EDR) inspired tool built to monitor host activity, detect suspicious behavior using custom rules, log security events, and send real-time Telegram alerts.</p>
             <div class="card-tech">
-              <span>Python</span><span>Telegram API</span><span>HIDS</span>
+              <span>Python</span><span>Telegram Bot API</span><span>Host-based Intrusion Detection (HIDS)</span>
             </div>
             <div class="card-actions">
               <a href="https://github.com/DarthWakamiya/NightWatch-EDR" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Read More</a>
@@ -1555,7 +1537,7 @@ strong { color: var(--text); font-weight: 600; }
         <article class="card reveal">
           <div class="card-image">
             <!-- Replace PROJECT_IMAGE_2 with actual image path -->
-             <img src="PROJECT_IMAGE_2" alt="Smart Parking System Project" />
+             <img src="images/Smart-Parking-System.png" alt="Smart Parking System Project" />
             <div class="image-placeholder">
               <span class="card-category-badge">Engineering</span>
             </div>
@@ -1566,9 +1548,9 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-medium">Intermediate</span>
             </div>
             <h3 class="card-title">Smart Parking System</h3>
-            <p class="card-desc">An integrated hardware-software parking management system using sensors and automation logic to detect and manage parking slot availability.</p>
+            <p class="card-desc">An IoT-based smart parking system that uses ESP32 and Infrared sensors to detect parking slot occupancy, synchronize data with a web dashboard in real time, and provide live parking availability monitoring.</p>
             <div class="card-tech">
-              <span>C++</span><span>ESP32</span><span>Sensors</span><span>IoT</span>
+              <span>C++</span><span>ESP32</span><span>IR Sensors</span><span>IoT</span>
             </div>
             <div class="card-actions">
               <a href="https://github.com/DarthWakamiya/Smart-Parking-System-Project" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Read More</a>
@@ -1757,7 +1739,8 @@ strong { color: var(--text); font-weight: 600; }
         <article class="card reveal" data-platform="ctf">
           <div class="card-image">
             <!-- Replace WRITEUP_IMAGE_1 -->
-            <div class="image-placeholder">
+            <div class="QuantumScrambler-image">
+                <img src="images/pico.jpg" alt="Quantum Scrambler" />
               <span class="card-category-badge">CTF</span>
             </div>
           </div>
@@ -1768,7 +1751,7 @@ strong { color: var(--text); font-weight: 600; }
             </div>
             <h3 class="card-title">Quantum Scrambler</h3>
             <p class="card-category-text">PicoCTF | Reverse Engineering </p>
-            <p class="card-desc">PLACEHOLDER</p>
+            <p class="card-desc">Analyzed binary logic and reverse engineered the program to understand its functionality and recover the challenge flag.</p>
             <div class="card-actions">
               <a href="https://www.instagram.com/p/DS1KfNoEoqS/" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Instagram</a>
             </div>
@@ -1778,7 +1761,8 @@ strong { color: var(--text); font-weight: 600; }
         <!-- WRITEUP CARD 2: CTF -->
         <article class="card reveal" data-platform="thm">
           <div class="card-image">
-            <div class="image-placeholder">
+            <div class="dearqa-image">
+                <img src="images/pwn.avif" alt="DearQA" />
               <span class="card-category-badge">Challenges</span>
             </div>
           </div>
@@ -1789,7 +1773,7 @@ strong { color: var(--text); font-weight: 600; }
             </div>
             <h3 class="card-title">DearQA</h3>
             <p class="card-category-text">TryHackMe | Binary Exploitation</p>
-            <p class="card-desc">PLACEHOLDER</p>
+            <p class="card-desc">Exploited a classic stack buffer overflow vulnerability using a ret2win technique to redirect execution and gain shell access.</p>
             <div class="card-actions">
               <a href="https://github.com/DarthWakamiya/ctf-writeup" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
             </div>
@@ -1867,7 +1851,8 @@ strong { color: var(--text); font-weight: 600; }
         <!-- WRITEUP CARD 6: TryHackMe -->
         <article class="card reveal" data-platform="thm">
           <div class="card-image">
-            <div class="image-placeholder">
+            <div class="Active Directory-image">
+            <img src="images/dc.jpg" alt="Active Directory" />
               <span class="card-category-badge">Challenges</span>
             </div>
           </div>
@@ -1876,9 +1861,9 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-platform platform-thm">TryHackMe</span>
               <span class="card-difficulty difficulty-medium">Medium</span>
             </div>
-            <h3 class="card-title">SoupeDecode101</h3>
+            <h3 class="card-title">SoupeDecode01</h3>
             <p class="card-category-text">TryHackMe · Active Directory</p>
-            <p class="card-desc">PLACEHOLDER</p>
+            <p class="card-desc">Practiced Active Directory enumeration, privilege escalation, and post-exploitation techniques in a Windows domain environment.</p>
             <div class="card-actions">
               <a href="https://www.instagram.com/reel/DYeYAwgRbgu" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Instagram</a>
             </div>
@@ -2026,52 +2011,29 @@ strong { color: var(--text); font-weight: 600; }
         </a>
 
         <!-- LinkedIn,replace LINKEDIN_PROFILE_URL -->
-        <a href="LINKEDIN_PROFILE_URL" target="_blank" rel="noopener" class="contact-item" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/wakamiya-naufal-03a39639b/" target="_blank" rel="noopener" class="contact-item" aria-label="LinkedIn">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </div>
           <span>LinkedIn</span>
         </a>
 
-        <!-- Email,replace EMAIL_ADDRESS -->
-        <a href="mailto:EMAIL_ADDRESS" class="contact-item" aria-label="Email">
+        <a href="mailto:wkm.naufal@gmail.com" class="contact-item" aria-label="Email">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <span>Email</span>
         </a>
-
-        <!-- Discord,replace DISCORD_USERNAME -->
-        <a href="DISCORD_PROFILE_URL" target="_blank" rel="noopener" class="contact-item" aria-label="Discord">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-          </div>
-          <span>Discord</span>
-        </a>
-
-        <!-- Twitter/X,replace TWITTER_PROFILE_URL -->
-        <a href="TWITTER_PROFILE_URL" target="_blank" rel="noopener" class="contact-item" aria-label="Twitter / X">
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </div>
-          <span>X / Twitter</span>
-        </a>
-
-      </div>
-
-    </div>
   </section>
 
 
-  <!--
-       FOOTER
- -->
+  <!--FOOTER-->
   <footer id="footer">
     <div class="container">
       <div class="footer-inner">
         <p class="footer-brand">Wakamiya<span class="accent">.</span></p>
         <p class="footer-copy">
-          Built with HTML, CSS &amp; JavaScript · No frameworks · No fluff
+          Built with HTML, CSS &amp; JavaScript
         </p>
         <p class="footer-year">© <span id="footerYear"></span> Wakamiya Naufal</p>
       </div>
@@ -2080,17 +2042,10 @@ strong { color: var(--text); font-weight: 600; }
 
 
   <script>
-/*
-   WAKAMIYA PORTFOLIO,script.js
-   Handles: navbar scroll, mobile menu, scroll reveal,
-            skill bar animation, writeup filtering, footer year */
 
 'use strict';
 
 /*
-   UTILITIES */
-
-/**
  * Run callback after DOM is fully parsed.
  */
 function onReady(fn) {
@@ -2158,8 +2113,7 @@ function initNavbar() {
 }
 
 
-/*
-   MOBILE MENU,hamburger toggle */
+
 function initMobileMenu() {
   const toggle   = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
