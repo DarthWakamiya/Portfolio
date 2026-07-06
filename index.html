@@ -7,9 +7,9 @@
   <title>Wakamiya,Cybersecurity Enthusiast</title>
 
   <!-- Fonts: JetBrains Mono (display/labels) + Inter (body) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.PLACEHOLDERapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.PLACEHOLDERapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
 
@@ -1135,6 +1135,208 @@ strong { color: var(--text); font-weight: 600; }
   .footer-inner { text-align: center; align-items: center; }
 }
 
+/* 
+   Certificate Cards
+ */
+
+.cert-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:24px;
+
+}
+
+.cert-card{
+
+    background:#141414;
+
+    border:1px solid #262626;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.cert-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#cc2b2b;
+
+}
+
+.cert-card img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.cert-info{
+
+    padding:16px;
+
+}
+
+.cert-name{
+
+    display:block;
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:6px;
+
+}
+
+.cert-issuer{
+
+    color:#8f8f8f;
+
+    font-size:.9rem;
+
+}
+
+/* ============
+   Certificate Cards
+============ */
+
+.cert-card{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cert-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.cert-card img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/*Modal*/
+
+.image-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.88);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.25s ease;
+
+    z-index:999999;
+
+}
+
+.image-modal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.image-modal img{
+
+    max-width:92vw;
+
+    max-height:92vh;
+
+    border-radius:12px;
+
+    box-shadow:0 25px 80px rgba(0,0,0,.6);
+
+    transform:scale(.88);
+
+    transition:.25s;
+
+}
+
+.image-modal.show img{
+
+    transform:scale(1);
+
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:24px;
+
+    right:36px;
+
+    color:#fff;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    user-select:none;
+
+}
+
+.close-modal:hover{
+
+    color:#ff4d4d;
+
+}
+
+/*Mobile*/
+
+@media(max-width:768px){
+
+    .close-modal{
+
+        top:15px;
+
+        right:20px;
+
+        font-size:38px;
+
+    }
+
+}
+
   </style>
 </head>
 <body>
@@ -1163,11 +1365,9 @@ strong { color: var(--text); font-weight: 600; }
   <!--HOME / HERO-->
   <section id="home" class="hero">
     <div class="hero-content">
-
-      <!-- Profile photo,replace PROFILE_PHOTO_URL with actual image path -->
       <div class="hero-photo">
         <div class="photo-placeholder">
-          <!-- <img src="PROFILE_PHOTO_URL" alt="Wakamiya Naufal" /> -->
+        <!-- <img src="PROFILE_PHOTO_URL" alt="Wakamiya Naufal" /> -->
           <span>WN</span>
         </div>
       </div>
@@ -1178,11 +1378,10 @@ strong { color: var(--text); font-weight: 600; }
         <p class="hero-tagline">Offensive Security · Blue Team · Red Team · Penetration Testing</p>
         <p class="hero-intro">
           I study how systems break so I can understand how to defend them.
-          From CTF challenges and HTB labs to real-world security tooling —
+          From CTF challenges and HTB labs to real-world security tooling, 
           this is where I document the journey.
         </p>
         <div class="hero-actions">
-          <!-- Replace GITHUB_PROFILE_URL with your actual GitHub URL -->
           <a href="https://github.com/DarthWakamiya" target="_blank" rel="noopener" class="btn btn-primary">
             View GitHub
           </a>
@@ -1192,7 +1391,7 @@ strong { color: var(--text); font-weight: 600; }
 
     </div>
 
-    <!-- Scroll indicator -->
+    <!--Scroll indicator-->
     <div class="scroll-indicator" aria-hidden="true">
       <span>scroll</span>
       <div class="scroll-line"></div>
@@ -1238,7 +1437,7 @@ strong { color: var(--text); font-weight: 600; }
             <span class="fact-label">CV</span>
             <span class="fact-value">
             <a href="CV_DOWNLOAD_URL" class="inline-link" download>Download CV</a>
-            </span> --> needed soon...
+            </span> -->
           </div>
         </div>
       </div>
@@ -1247,9 +1446,7 @@ strong { color: var(--text); font-weight: 600; }
   </section>
 
 
-  <!--
-       SKILLS
- -->
+<!--SKILLS-->
   <section id="skills" class="section section-alt">
     <div class="container">
 
@@ -1271,9 +1468,9 @@ strong { color: var(--text); font-weight: 600; }
           </div>
           <p class="skill-desc">Penetration testing methodology, exploitation techniques, privilege escalation, and vulnerability research.</p>
           <div class="skill-tags">
-            <span>Metasploit</span><span>Burp Suite</span><span>nmap</span><span>SQLmap</span><span>John</span>
+            <span>Metasploit</span><span>Burp Suite</span><span>nmap</span><span>SQLmap</span><span>Hashcat</span><span>Ettercap</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 70%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Blue Team -->
@@ -1284,11 +1481,11 @@ strong { color: var(--text); font-weight: 600; }
             </div>
             <h3>Blue Team</h3>
           </div>
-          <p class="skill-desc">Threat detection, SIEM analysis, log investigation, incident response fundamentals, and EDR development.</p>
+          <p class="skill-desc">Threat detection, log investigation, incident response fundamentals, and EDR development.</p>
           <div class="skill-tags">
-            <span>Splunk</span><span>Wireshark</span><span>Sysmon</span><span>HIDS</span><span>EDR</span>
+            <span>iptables</span><span>Wireshark</span><span>Sysmon</span><span>HIDS</span><span>EDR</span><span>CIA Triad</span><span>AAA Security</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 65%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Networking -->
@@ -1301,9 +1498,9 @@ strong { color: var(--text); font-weight: 600; }
           </div>
           <p class="skill-desc">TCP/IP stack, network protocols, packet analysis, traffic inspection, and network-based attack vectors.</p>
           <div class="skill-tags">
-            <span>TCP/IP</span><span>DNS</span><span>HTTP/S</span><span>Wireshark</span><span>tcpdump</span>
+            <span>TCP/IP</span><span>DNS</span><span>HTTP/S</span><span>Wireshark</span><span>tcpdump</span><span>OSI Layer</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 72%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Linux -->
@@ -1316,9 +1513,9 @@ strong { color: var(--text); font-weight: 600; }
           </div>
           <p class="skill-desc">Linux internals, shell scripting, privilege escalation, process management, and system hardening.</p>
           <div class="skill-tags">
-            <span>Bash</span><span>Kali</span><span>BlackArch/Arch</span><span>systemd</span><span>cron</span>
+            <span>Bash</span><span>Kali</span><span>BlackArch/Arch</span><span>systemd</span><span>cron</span><span>vim</span><span>awk</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 78%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Programming -->
@@ -1333,7 +1530,7 @@ strong { color: var(--text); font-weight: 600; }
           <div class="skill-tags">
             <span>Python</span><span>Bash</span><span>C</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 68%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Reverse Engineering -->
@@ -1346,9 +1543,9 @@ strong { color: var(--text); font-weight: 600; }
           </div>
           <p class="skill-desc">Binary analysis, disassembly, debugging, and understanding malware or obfuscated code at the assembly level.</p>
           <div class="skill-tags">
-            <span>Ghidra</span><span>x64dbg</span><span>GDB</span><span>Assembly</span>
+            <span>Ghidra</span><span>objdump</span><span>GDB</span><span>Assembly</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 55%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Cloud Security -->
@@ -1363,7 +1560,7 @@ strong { color: var(--text); font-weight: 600; }
           <div class="skill-tags">
             <span>AWS</span><span>IAM</span><span>S3</span><span>CloudTrail</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 48%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
         <!-- Web Security -->
@@ -1376,9 +1573,9 @@ strong { color: var(--text); font-weight: 600; }
           </div>
           <p class="skill-desc">OWASP Top 10, web application testing, SQL injection, XSS, IDOR, authentication bypass, and API security.</p>
           <div class="skill-tags">
-            <span>OWASP</span><span>Burp Suite</span><span>SQLi</span><span>XSS</span><span>IDOR</span>
+            <span>OWASP</span><span>Burp Suite</span><span>Path Traversal</span><span>SSTI/SSRF</span><span>CSRF</span><span>LFI</span><span>RCE</span>
           </div>
-          <div class="skill-bar"><div class="skill-fill" style="--w: 66%"></div></div>
+          <div class="skill-bar"><div class="skill-fill" style="--w: 100%"></div></div>
         </div>
 
       </div>
@@ -1386,9 +1583,7 @@ strong { color: var(--text); font-weight: 600; }
   </section>
 
 
-  <!--
-       JOURNEY / TIMELINE
- -->
+<!--JOURNEY / TIMELINE-->
   <section id="journey" class="section">
     <div class="container">
 
@@ -1494,9 +1689,7 @@ strong { color: var(--text); font-weight: 600; }
   </section>
 
 
-  <!--
-       PROJECTS
- -->
+<!--PROJECTS-->
   <section id="projects" class="section section-alt">
     <div class="container">
 
@@ -1558,33 +1751,25 @@ strong { color: var(--text); font-weight: 600; }
           </div>
         </article>
 
-        <!-- PROJECT CARD 3: Placeholder -->
         <article class="card reveal">
           <div class="card-image">
-            <!-- Replace PROJECT_IMAGE_3 -->
-            <img src="PROJECT_IMAGE_3" alt="placeholder" />
+            <img src="images/honeypot.webp" alt="placeholder" />
             <div class="image-placeholder">
               <span class="card-category-badge">Offensive</span>
             </div>
           </div>
           <div class="card-body">
             <div class="card-meta">
-              <!-- Replace PROJECT_CATEGORY_3 -->
-              <span class="card-category">PROJECT_CATEGORY_3</span>
+              <span class="card-category">Medium</span>
               <span class="card-difficulty difficulty-medium">Intermediate</span>
             </div>
-            <!-- Replace PROJECT_NAME_3 -->
-            <h3 class="card-title">PROJECT_NAME_3</h3>
-            <!-- Replace PROJECT_DESCRIPTION_3 -->
-            <p class="card-desc">PROJECT_DESCRIPTION_3,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <h3 class="card-title">HoneySOC Agent</h3>
+            <p class="card-desc">Real-time SOC monitoring agent for Cowrie Honeypot with Discord alerting and offline GeoIP enrichment.</p>
             <div class="card-tech">
-              <!-- Replace TECH tags -->
-              <span>TECH_1</span><span>TECH_2</span><span>TECH_3</span>
+              <span>Python</span><span>Discord API</span><span>GeoIP</span>
             </div>
             <div class="card-actions">
-              <!-- Replace PROJECT_REPOSITORY_3 -->
-              <a href="https://github.com/DarthWakamiya/PROJECT_REPOSITORY_3" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Read More</a>
-              <!-- Replace READ_MORE_LINK_3 -->
+              <a href="https://github.com/DarthWakamiya/HoneySOC-Agent" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Read More</a>
             </div>
           </div>
         </article>
@@ -1603,7 +1788,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-easy">Beginner</span>
             </div>
             <h3 class="card-title">PROJECT_NAME_4</h3>
-            <p class="card-desc">PROJECT_DESCRIPTION_4,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <p class="card-desc">PLACEHOLDER.</p>
             <div class="card-tech">
               <span>TECH_1</span><span>TECH_2</span>
             </div>
@@ -1627,7 +1812,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-hard">Advanced</span>
             </div>
             <h3 class="card-title">PROJECT_NAME_5</h3>
-            <p class="card-desc">PROJECT_DESCRIPTION_5,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <p class="card-desc">PLACEHOLDER.</p>
             <div class="card-tech">
               <span>TECH_1</span><span>TECH_2</span><span>TECH_3</span>
             </div>
@@ -1651,7 +1836,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-medium">Intermediate</span>
             </div>
             <h3 class="card-title">PROJECT_NAME_6</h3>
-            <p class="card-desc">PROJECT_DESCRIPTION_6,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <p class="card-desc">PLACEHOLDER.</p>
             <div class="card-tech">
               <span>TECH_1</span><span>TECH_2</span>
             </div>
@@ -1675,7 +1860,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-hard">Advanced</span>
             </div>
             <h3 class="card-title">PROJECT_NAME_7</h3>
-            <p class="card-desc">PROJECT_DESCRIPTION_7,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <p class="card-desc">PLACEHOLDER.</p>
             <div class="card-tech">
               <span>TECH_1</span><span>TECH_2</span><span>TECH_3</span>
             </div>
@@ -1699,7 +1884,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-medium">Intermediate</span>
             </div>
             <h3 class="card-title">PROJECT_NAME_8</h3>
-            <p class="card-desc">PROJECT_DESCRIPTION_8,A short description of what this project does, the problem it solves, and what makes it interesting.</p>
+            <p class="card-desc">PLACEHOLDER.</p>
             <div class="card-tech">
               <span>TECH_1</span><span>TECH_2</span>
             </div>
@@ -1738,7 +1923,6 @@ strong { color: var(--text); font-weight: 600; }
         <!-- WRITEUP CARD 1: CTF -->
         <article class="card reveal" data-platform="ctf">
           <div class="card-image">
-            <!-- Replace WRITEUP_IMAGE_1 -->
             <div class="QuantumScrambler-image">
                 <img src="images/pico.jpg" alt="Quantum Scrambler" />
               <span class="card-category-badge">CTF</span>
@@ -1783,8 +1967,8 @@ strong { color: var(--text); font-weight: 600; }
         <!-- WRITEUP CARD 3: HTB -->
         <article class="card reveal" data-platform="htb">
           <div class="card-image">
-            <!-- Replace WRITEUP_IMAGE_3 -->
-            <div class="image-placeholder">
+            <div class="Enigma-image">
+            <img src="images/enigma.webp" alt="Enigma" />
               <span class="card-category-badge">Room</span>
             </div>
           </div>
@@ -1793,13 +1977,11 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-platform platform-htb">HackTheBox</span>
               <span class="card-difficulty difficulty-easy">Easy</span>
             </div>
-            <h3 class="card-title">WRITEUP_TITLE_3</h3>
+            <h3 class="card-title">Enigma</h3>
             <p class="card-category-text">HackTheBox · Web Exploitation</p>
-            <p class="card-desc">PLACEHOLDER</p>
+            <p class="card-desc">Compromised a multi-stage Hack The Box machine by chaining NFS enumeration, mail service abuse, OpenSTAManager command injection (CVE-2025-69212), password cracking, and privilege escalation through a misconfigured OliveTin instance.</p>
             <div class="card-actions">
-              <!-- Replace with your HTB Academy notes repo -->
               <a href="https://github.com/DarthWakamiya" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
-              <!-- Replace HTB_MODULE_LINK_3 with the module URL -->
             </div>
           </div>
         </article>
@@ -1825,10 +2007,10 @@ strong { color: var(--text); font-weight: 600; }
           </div>
         </article>
 
-        <!-- WRITEUP CARD 5: TryHackMe -->
         <article class="card reveal" data-platform="thm">
           <div class="card-image">
-            <div class="image-placeholder">
+            <div class="colddbox-image">
+            <img src="images/colddbox.png" alt="Colddbox" />
               <span class="card-category-badge">Challenges</span>
             </div>
           </div>
@@ -1837,13 +2019,11 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-platform platform-thm">TryHackMe</span>
               <span class="card-difficulty difficulty-easy">Easy</span>
             </div>
-            <h3 class="card-title">WRITEUP_TITLE_5</h3>
-            <p class="card-category-text">TryHackMe · Linux Privilege Escalation</p>
-            <p class="card-desc">PLACEHOLDER</p>
+            <h3 class="card-title">ColddBox</h3>
+            <p class="card-category-text">TryHackMe · Web Exploitation</p>
+            <p class="card-desc">Wordpress Compromise Through Credential Discovery and Privilege Escalation</p>
             <div class="card-actions">
-              <!-- Replace THM_WRITEUP_REPO with your writeup repo or notes -->
-              <a href="https://github.com/DarthWakamiya" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
-              <!-- Replace THM_ROOM_LINK_5 with the THM room URL -->
+              <a href="https://www.instagram.com/p/DaA0UvIxOlg" target="_blank" rel="noopener" class="btn btn-sm btn-outline">Instagram</a>
             </div>
           </div>
         </article>
@@ -1883,7 +2063,7 @@ strong { color: var(--text); font-weight: 600; }
               <span class="card-difficulty difficulty-medium">Medium</span>
             </div>
             <h3 class="card-title">WRITEUP_TITLE_7</h3>
-            <p class="card-category-text">WRITEUP_EVENT_7 · Cryptography</p>
+            <p class="card-category-text">TryHackMe · Cryptography</p>
             <p class="card-desc">PLACEHOLDER</p>
             <div class="card-actions">
               <a href="https://github.com/DarthWakamiya/ctf-writeup" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>
@@ -1916,93 +2096,94 @@ strong { color: var(--text); font-weight: 600; }
     </div>
   </section>
 
-
-  <!--
-       CERTIFICATES
- -->
-  <section id="certificates" class="section section-alt">
+<!--Certificates-->
+<section id="certificates" class="section section-alt">
     <div class="container">
+        <div class="section-header">
+            <p class="section-label">06 / CERTIFICATES</p>
+            <h2 class="section-title">Certificates</h2>
+        </div>
 
-      <div class="section-header">
-        <p class="section-label">06 / certificates</p>
-        <h2 class="section-title">Certificates</h2>
-      </div>
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card reveal" data-image="certificates/pusdatin.png">
+                <img src="certificates/pusdatin.png" alt="PUSDATIN Certificate">
+                <div class="cert-info">
+                    <span class="cert-name">PUSDATIN Internship (6 Month)</span>
+                    <span class="cert-issuer">Automation Control Systems & AI </span>
+                </div>
+            </div>
 
-      <div class="cert-grid">
+            <!-- Certificate 2 -->
+            <div class="cert-card reveal" data-image="certificates/axioo.png">
+                <img src="certificates/axioo.png" alt="Axioo Certificate">
+                <div class="cert-info">
+                    <span class="cert-name">Axioo Class Program (3 Month)</span>
+                    <span class="cert-issuer">Industry Based IT Training Program</span>
+                </div>
+            </div>
 
-        <!-- Replace CERTIFICATE_IMAGE_N with actual image/badge paths -->
-        <!-- Replace CERTIFICATE_LINK_N with the verification URL -->
+            <!-- Certificate 3 -->
+            <div class="cert-card reveal" data-image="certificates/intro_cysec.png">
+                <img src="certificates/intro_cysec.png" alt="Intro To Cysec Certificate">
+                <div class="cert-info">
+                    <span class="cert-name">Intro To Cyber Security</span>
+                    <span class="cert-issuer">CyberSecurity Fundamentals</span>
+                </div>
+            </div>
 
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <!-- <img src="CERTIFICATE_IMAGE_1" alt="CERTIFICATE_NAME_1" /> -->
-          <div class="cert-placeholder">Cisco</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_1</span>
-            <span class="cert-issuer">Cisco</span>
-          </div>
-        </a>
+            <!-- Certificate 4 -->
+            <div class="cert-card reveal" data-image="certificates/Esec.png">
+                <img src="certificates/Esec.png" alt="EndPoint Security Certificate">
+                <div class="cert-info">
+                    <span class="cert-name">EndPoint Security</span>
+                    <span class="cert-issuer">EndPoint Protection & Defense</span>
+                </div>
+            </div>
 
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <div class="cert-placeholder">HTB</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_2</span>
-            <span class="cert-issuer">Hack The Box</span>
-          </div>
-        </a>
+            <!-- Certificate 5 -->
+            <div class="cert-card reveal" data-image="certificates/english.png">
+                <img src="certificates/english.png" alt="English Certificate">
+                <div class="cert-info">
+                    <span class="cert-name">EF SET English Certificate</span>
+                    <span class="cert-issuer">CEFR B1 Intermediate</span>
+                </div>
+            </div>
 
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <div class="cert-placeholder">THM</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_3</span>
-            <span class="cert-issuer">TryHackMe</span>
-          </div>
-        </a>
-
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <div class="cert-placeholder">Google</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_4</span>
-            <span class="cert-issuer">Google</span>
-          </div>
-        </a>
-
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <div class="cert-placeholder">CompTIA</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_5</span>
-            <span class="cert-issuer">CompTIA</span>
-          </div>
-        </a>
-
-        <a href="#" class="cert-card reveal" target="_blank" rel="noopener">
-          <div class="cert-placeholder">+</div>
-          <div class="cert-info">
-            <span class="cert-name">CERTIFICATE_NAME_6</span>
-            <!-- Replace CERTIFICATE_ISSUER_6 -->
-            <span class="cert-issuer">CERTIFICATE_ISSUER_6</span>
-          </div>
-        </a>
-
-      </div>
+            <!-- Certificate 6 -->
+            <div class="cert-card reveal" data-image="certificates/cert6.png">
+                <img src="certificates/cert6.png" alt="Certificate 6">
+                <div class="cert-info">
+                    <span class="cert-name">Certificate Name 6</span>
+                    <span class="cert-issuer">PLACEHOLDER</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
+
+<!--Certificate Preview Modal-->
+<div id="imageModal" class="image-modal">
+
+    <span class="close-modal">&times;</span>
+
+    <img id="modalImage" src="" alt="Certificate Preview">
+
+</div>
 
 
-  <!--
-       CONTACT
- -->
+<!--CONTACT-->
   <section id="contact" class="section">
     <div class="container">
 
       <div class="section-header">
         <p class="section-label">07 / contact</p>
         <h2 class="section-title">Get in Touch</h2>
-        <p class="section-subtitle">I'm open to conversations about security, collaboration, or opportunities.</p>
+        <p class="section-subtitle">I'm open to conversations about IT/cybersecurity, collaboration, or opportunities.</p>
       </div>
 
       <div class="contact-links">
 
-        <!-- GitHub,replace GITHUB_PROFILE_URL -->
         <a href="https://github.com/DarthWakamiya" target="_blank" rel="noopener" class="contact-item" aria-label="GitHub">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -2010,7 +2191,6 @@ strong { color: var(--text); font-weight: 600; }
           <span>GitHub</span>
         </a>
 
-        <!-- LinkedIn,replace LINKEDIN_PROFILE_URL -->
         <a href="https://www.linkedin.com/in/wakamiya-naufal-03a39639b/" target="_blank" rel="noopener" class="contact-item" aria-label="LinkedIn">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -2032,9 +2212,6 @@ strong { color: var(--text); font-weight: 600; }
     <div class="container">
       <div class="footer-inner">
         <p class="footer-brand">Wakamiya<span class="accent">.</span></p>
-        <p class="footer-copy">
-          Built with HTML, CSS &amp; JavaScript
-        </p>
         <p class="footer-year">© <span id="footerYear"></span> Wakamiya Naufal</p>
       </div>
     </div>
@@ -2345,6 +2522,58 @@ onReady(() => {
   initFooterYear();
   initHeroTyping();
   initCardTilt();
+});
+
+/* ============
+   Certificate Preview
+============ */
+
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.querySelector(".close-modal");
+
+document.querySelectorAll(".cert-card").forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        modalImage.src = card.dataset.image;
+
+        imageModal.classList.add("show");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+});
+
+function hideModal(){
+
+    imageModal.classList.remove("show");
+
+    document.body.style.overflow = "auto";
+
+}
+
+closeModal.addEventListener("click", hideModal);
+
+imageModal.addEventListener("click", (e)=>{
+
+    if(e.target === imageModal){
+
+        hideModal();
+
+    }
+
+});
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key === "Escape"){
+
+        hideModal();
+
+    }
+
 });
 
   </script>
